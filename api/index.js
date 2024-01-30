@@ -1,6 +1,7 @@
 import express from "express";
 import mangoose from "mongoose";
 import dotenv from "dotenv";
+import userRouter from "./routes/user.route.js";
 dotenv.config();
 
 mangoose
@@ -17,3 +18,5 @@ const app = express();
 app.listen(3000, () => {
   console.log("server is listening on port 3000");
 });
+
+app.use("/api/user", userRouter);
